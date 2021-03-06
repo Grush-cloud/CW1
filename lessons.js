@@ -5,7 +5,7 @@ lessons=[
     location: "London",
     price: 500,
     spaces:5,
-    image:"art.jpg",
+    image:"images/art.jpg",
     
 },
 {
@@ -14,7 +14,7 @@ lessons=[
     location: "United States",
     price: 200,
     spaces:5,
-    image:"biology.jpg",
+    image:"images/biology.jpg",
     
 },
 {
@@ -23,7 +23,7 @@ lessons=[
     location: "London",
     price: 1000,
     spaces:5,
-    image:"chem.jpg",
+    image:"images/chem.jpg",
     
 },
 {
@@ -32,7 +32,7 @@ lessons=[
     location: "United Kingdom",
     price: 2200,
     spaces:5,
-    image:"english.jpg",
+    image:"images/english.jpg",
     
 },
 {
@@ -41,7 +41,7 @@ lessons=[
     location: "Paris",
     price: 2000,
     spaces:5,
-    image:"french.jpg",
+    image:"images/french.jpg",
     
 },
 {
@@ -50,7 +50,7 @@ lessons=[
     location: "London",
     price: 2030,
     spaces:5,
-    image:"geography.jpg",
+    image:"images/geography.jpg",
     
 },
 {
@@ -59,7 +59,7 @@ lessons=[
     location: "Ghana",
     price: 1000,
     spaces:5,
-    image:"history.jpg",
+    image:"images/history.jpg",
     
 },
 {
@@ -68,7 +68,7 @@ lessons=[
     location: "London",
     price: 2400,
     spaces:5,
-    image:"maths.jpg",
+    image:"images/maths.jpg",
     
 },
 {
@@ -77,7 +77,7 @@ lessons=[
     location: "Paris",
     price: 234,
     spaces:5,
-    image:"music.jpg",
+    image:"images/music.jpg",
     
 },
 {
@@ -86,7 +86,7 @@ lessons=[
     location: "London",
     price: 1400,
     spaces:5,
-    image:"physics.jpg",
+    image:"images/physics.jpg",
     
 },
 ]
