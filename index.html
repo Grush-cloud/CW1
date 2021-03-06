@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <title>Lessons</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <script src="https://unpkg.com/vue"></script>
+        <script src="lessons.js"></script>
+    </head>
+    <body>
+
+
+        <div id="app">
+            <header>
+                <h1 v-text="sitename"></h1>
+                <button v-on:click='showCheckout'>
+                    {{cartItemCount}}
+                    <span class="fas fa-cart-plus"></span> Show Checkout
+                </button>
+            </header>
+            <main>
+                <div v-if='showProduct'>
+                    <div v-for="lesson in lessons">
+                        <h2 v-text="lesson.title">Lessons</h2>
+                
+                    <figure>
+                    <!--bind the 'src' attribute to the 'product.image' in 'data'-->
+                    <img v-bind:src="lesson.image">
+                </figure>
+                
+                <p v-html="lesson.description"></p>
+
+                <!-- The double curly brackets is the shorter version of 'v-text'-->
+               <p>Subject: {{lesson.subject}}</p>
+                <p>Price: {{lesson.price}}</p>
+                <p>Location:{{lesson.location}}</p>
+                <p>Number of spaces: {{lesson.spaces}}</p>
+                <!--<button v-on:click="addToCart" v-show="canAddToCart">
+                    Add to cart
+                </button>-->
+
+                <button v-on:click='addToCart(lesson)' v-if='canAddToCart(lesson)'>Add to cart</button>
+
+                
+
+                <button disabled="disabled" v-else>Add to cart</button>
+
+                
+                </div>
+
+            </div>
+                <div v-else>
+                    <h2>Checkout</h2>
+                    <p>
+                        <strong>Name:</strong>
+                        <input v-model="order.Name">
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong>
+                        <input v-model="order.Phone">
+
+                    </p>
+
+                   
+
+                  
+
+                    
+
+                    <button v-on:click="submitForm">Place Order</button>
+            </main>
+        </div>
+
+        
+
+
+
+
+        <script type="text/javascript">
+        var webstore = new Vue({
+            el: '#app', 
+            data: {
+                 // the 'data' option
+            // the key 'sitename' matches the value of 'v-text' earlier
+            sitename: 'Lessons',
+            showProduct:true,
+             lessons: lessons,
+            cart: [],
+            showProduct:true,
+
+            order:{
+                Name:'',
+                Phone: '',
+              
+            },
+
+          
+
+         },
+    
+
+
+         methods:{
+            addToCart (lesson) {
+                this.cart.push(lesson.id);
+                
+
+            },
+
+            
+            showCheckout(){
+                    this.showProduct = this.showProduct ? false : true;
+
+                },
+
+                submitForm(){ alert('Order submitted!')
+
+
+                },
+
+                cartCount(id){
+                    let count = 0;
+                    for(let i=0; i<this.cart.length; i++){
+                        if(this.cart[i]===id){
+                            count++;
+                        }
+                    }
+                    return count;
+                },
+
+                canAddToCart(lesson){
+            return lesson.spaces > this.cartCount(lesson.id);
+        },
+
+         },
+         
+
+         computed:{
+        cartItemCount:function(){
+            return this.cart.length || '';
+
+        },
+
+       sortedProducts(){
+        
+       },
+
+
+         },
+     
+         });
+
+     
+    </script>
+</body>
+</html>
