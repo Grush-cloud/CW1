@@ -65,7 +65,7 @@
                <p>Subject: {{lesson.subject}}</p>
                 <p>Price: {{lesson.price}}</p>
                 <p>Location:{{lesson.location}}</p>
-                <p>Number of spaces: {{lesson.spaces}}</p>
+                <p>Number of spaces: {{lesson.spaces-cartCount(lesson)}}</p>
                 
 
                 <button v-on:click='addToCart(lesson)' v-if='canAddToCart(lesson)'>Add to cart</button>
