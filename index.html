@@ -11,10 +11,9 @@
         <div id="app">
             <header>
                 <h1 v-text="sitename"></h1>
-                <button v-on:click='showCheckout'>
-                    {{cartItemCount}}
-                    <span class="fas fa-cart-plus"></span> Show Checkout
-                </button>
+                <button  v-on:click="showCheckout" v-if="cartItemCount > 0">{{cartItemCount}} <i class="fas fa-cart-plus"></i> Checkout</button>
+
+                        <button  disabled v-else>{{cartItemCount}} <i class="fas fa-cart-plus"></i> Checkout</button>
             </header>
             <div>
                 <p>Sort by</p>
