@@ -99,6 +99,7 @@
                     
 
                     <button v-on:click="submitForm">Place Order</button>
+                </div>
             </main>
         </div>
 
@@ -232,9 +233,8 @@
                         addToCart: function (lesson) {
                             this.cart.push(lesson);
                         },
-                        removeFromCart: function (lesson){
-                            this.cart.splice(this.cart.indexOf(lesson))
-                        },
+                       
+
                         cartCount(id) {
                             let count = 0;
                             for (let i = 0; i < this.cart.length; i++) {
@@ -247,10 +247,17 @@
                         canAddToCart: function (lesson) {
                             return lesson.spaces > this.cartCount(lesson);
                         },
-                        showCheckout() {
-                            this.shop = this.shop ? false : true;
-                        },
-        
+                       
+            showCheckout(){
+                    this.showProduct = this.showProduct ? false : true;
+
+                },
+
+                submitForm(){
+                     alert('Order submitted!')
+
+
+                },
 
          },
          
